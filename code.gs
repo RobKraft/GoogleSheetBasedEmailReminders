@@ -23,7 +23,7 @@ function sendEmails() {
       var yearOfEvent = eventDate.getFullYear();
       var monthOfEvent = eventDate.getMonth() + 1;
       var dayOfEvent = eventDate.getDate();
-      if (currentYear >= yearOfEvent && currentMonth >= monthOfEvent && currentDay >= dayOfEvent)
+      if (currentYear >= yearOfEvent && (currentMonth > monthOfEvent || (currentMonth == monthOfEvent && currentDay >= dayOfEvent)))
       {
         var subject = emailSubjectPrefix + row[2];  //third column of row
         var message = row[3]; // fourth column of row
